@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-xs-12 text-right">
+        <a class="btn btn-warning hidden-print" ng-href="/">Logout</a>
+    </div>
+</div>
+<div ng-if="currentUser.isAdmin">
+<div ng-if="!item.isAdmin" class="row" ng-repeat="item in items" >
+        <div class="col-xs-12 userCard">
+            <p>{{item.firstName}} {{item.lastName}}</p>
+            <p>{{item.city}}, {{item.country}}</p>
+            <p>{{item.email}}</p>
+            <p>Password: {{item.password}}</p>
+            <a class="btn btn-info" ng-click="editUser(item)" ng-href="/{{item.id}}/edit">Edit User</a>
+            <a class="btn btn-info"  ng-click="previewUser(item)" ng-href="/{{item.id}}/preview">User Preview</a>
+            <button class="btn btn-success" ng-click="generatePassword(item)">Generate Password</button>
+            <span class="remove-user fa fa-close" ng-click="removeUser(item)"></span>
+        </div>
+</div>
+    <a class="btn btn-primary" ng-href="/add">Add New User</a>
+</div>
+
+<div class="row" ng-if="!currentUser.isAdmin">
+    <div class="col-xs-12 userCard">
+        <h4>User Info:</h4>
+        <p>{{currentUser.firstName}} {{currentUser.lastName}}</p>
+        <p>{{currentUser.city}}, {{currentUser.country}}</p>
+        <p>{{currentUser.email}}</p>
+        <hr>
+        <h4>Weather:</h4>
+        <img id="wicon" ng-src="http://openweathermap.org/img/w/{{currentUser.weather.weather[0].icon}}.png" alt="Weather icon">
+        <p>Temp: {{currentUser.weather.main.temp}}C°</p>
+        <p>Humidity: {{currentUser.weather.main.humidity}}%</p>
+        <span class="print-card fa fa-print hidden-print" onclick="window.print()"></span>
+    </div>
+</div>
+
+

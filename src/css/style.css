@@ -1,0 +1,42 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    padding: 50px 0;
+}
+
+.userCard {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid darkgrey;
+}
+
+.remove-user.fa {
+    font-size: 18px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.print-card.fa {
+    font-size: 18px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 670px) {
+    .btn,
+    input {
+        width: 100%;
+        margin-bottom: 2px;
+    }
+}

@@ -1,0 +1,8 @@
+<div class="raw">
+    <div class="col-xs-12 userCard" ng-repeat="item in items | filter:previewTodo" >
+        <p>{{item.firstName}} {{item.lastName}}</p>
+        <p>{{item.city}}, {{item.country}}</p>
+        <p>{{item.email}}</p>
+        <a class="btn btn-warning" ng-click="previewUser(item)" ng-href="/home" >Back</a>
+    </div>
+</div>
